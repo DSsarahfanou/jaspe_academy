@@ -1,7 +1,9 @@
+//app/auth
 "use client"
 import React, { useEffect, useState } from "react";
 import { myAppHook } from "@/context/AppProvider";
 import { useRouter } from "next/navigation";
+import Image from 'next/image';
 
 interface formData{
     name?: string,
@@ -54,8 +56,24 @@ const Auth: React.FC = () => {
     return (
         <>
             
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-        <div className="card p-4" style={{width: "400px"}}>
+    <div className="container d-flex justify-content-between align-items-center vh-100">
+        <div>
+            {isLogin? 
+            (<Image
+                src="/image/register_2.avif"
+                width={400}
+                height={400}
+                alt="logo_login"
+            />) : 
+            ( <Image
+                src="/image/register.png"
+                width={500}
+                height={550}
+                alt="logo_register"
+                className="rounded-full"
+            />)}
+        </div>
+        <div className="card  p-4" style={{width: "400px"}}>
             
             <h3 className="text-center"> {isLogin? "Login" : "Register"}</h3>
             <form onSubmit={handleFormSubmit}>
@@ -107,7 +125,6 @@ const Auth: React.FC = () => {
                     }
                </span>
             </p>
-
         </div>
     </div>
         </>

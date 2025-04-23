@@ -1,72 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-
-// Composants d'icônes SVG
-const IconGraduation = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3">
-    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
-  </svg>
-);
-
-const IconChart = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3">
-    <path d="M3 3v18h18"/>
-    <path d="m19 9-5 5-4-4-3 3"/>
-  </svg>
-);
-
-const IconBook = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3">
-    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-  </svg>
-);
-
-const IconCalendar = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3">
-    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
-    <line x1="16" x2="16" y1="2" y2="6"/>
-    <line x1="8" x2="8" y1="2" y2="6"/>
-    <line x1="3" x2="21" y1="10" y2="10"/>
-  </svg>
-);
-
-const IconMessage = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-  </svg>
-);
-
-const IconAward = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3">
-    <circle cx="12" cy="8" r="7"/>
-    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
-  </svg>
-);
-
-const IconLogout = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3">
-    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
-    <polyline points="16 17 21 12 16 7"/>
-    <line x1="21" y1="12" x2="9" y2="12"/>
-  </svg>
-);
-
-const IconBell = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
-    <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
-  </svg>
-);
-
-const IconSettings = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
-    <circle cx="12" cy="12" r="3"/>
-  </svg>
-);
+import { 
+  GraduationCap, 
+  BarChart2, 
+  BookOpen, 
+  Calendar, 
+  MessageSquare, 
+  Award, 
+  LogOut, 
+  Bell, 
+  Settings 
+} from 'lucide-react';
 
 // Interfaces pour le typage
 interface LayoutProps {
@@ -86,12 +31,12 @@ export default function Layout({ children, currentPage = 'courses' }: LayoutProp
 
   // Items du menu de navigation
   const menuItems: MenuItem[] = [
-    { icon: <IconGraduation />, text: 'Mes Cours', page: 'courses' },
-    { icon: <IconChart />, text: 'Ma Progression', page: 'progress' },
-    { icon: <IconBook />, text: 'Quiz', page: 'quiz' },
-    { icon: <IconCalendar />, text: 'Planning' },
-    { icon: <IconMessage />, text: 'Messages' },
-    { icon: <IconAward />, text: 'Certifications' },
+    { icon: <GraduationCap className="mr-3" size={20} />, text: 'Mes Cours', page: 'courses' },
+    { icon: <BarChart2 className="mr-3" size={20} />, text: 'Ma Progression', page: 'progress' },
+    { icon: <BookOpen className="mr-3" size={20} />, text: 'Quiz', page: 'quiz' },
+    { icon: <Calendar className="mr-3" size={20} />, text: 'Planning' },
+    { icon: <MessageSquare className="mr-3" size={20} />, text: 'Messages' },
+    { icon: <Award className="mr-3" size={20} />, text: 'Certifications' },
   ];
 
   return (
@@ -149,7 +94,7 @@ export default function Layout({ children, currentPage = 'courses' }: LayoutProp
 
         <div className="absolute bottom-0 w-72 p-6">
           <button className="flex items-center px-4 py-3 text-green-100 hover:bg-green-600 rounded-lg w-full">
-            <IconLogout />
+            <LogOut className="mr-3" size={20} />
             Déconnexion
           </button>
         </div>
@@ -165,11 +110,11 @@ export default function Layout({ children, currentPage = 'courses' }: LayoutProp
           </h1>
           <div className="flex items-center space-x-4">
             <button className="p-2 hover:bg-gray-100 rounded-full relative">
-              <IconBell />
+              <Bell size={20} />
               <span className="absolute top-1 right-1 h-2 w-2 bg-green-500 rounded-full"></span>
             </button>
             <button className="p-2 hover:bg-gray-100 rounded-full">
-              <IconSettings />
+              <Settings size={20} />
             </button>
           </div>
         </header>
