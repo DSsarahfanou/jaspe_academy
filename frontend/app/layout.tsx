@@ -1,9 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import './globals.css';  
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import { AppProvider } from "@/context/AppProvider";
+
 
 export const metadata: Metadata = {
   title: "JaspeAcademy",

@@ -68,18 +68,18 @@ const Auth: React.FC = () => {
             ( <Image
                 src="/image/register.png"
                 width={500}
-                height={550}
+                height={750}
                 alt="logo_register"
-                className="rounded-full"
+                className="self-center mt-5 rounded-full"
             />)}
         </div>
-        <div className="card  p-4" style={{width: "400px"}}>
+        <div className="p-4 card" style={{width: "400px"}}>
             
             <h3 className="text-center"> {isLogin? "Login" : "Register"}</h3>
             <form onSubmit={handleFormSubmit}>
                 {
                     !isLogin && (<input 
-                        className="form-control mb-2" 
+                        className="mb-2 form-control" 
                         name="name" 
                         type="text" 
                         value={formData.name}
@@ -88,7 +88,7 @@ const Auth: React.FC = () => {
                         required/>)
                 } 
                 <input 
-                    className="form-control mb-2" 
+                    className="mb-2 form-control" 
                     name="email" 
                     type="email" 
                     value={formData.email}
@@ -97,7 +97,7 @@ const Auth: React.FC = () => {
                     required
                 />
                 <input
-                     className="form-control mb-2" 
+                     className="mb-2 form-control" 
                      name="password" 
                      type="password" 
                      value={formData.password}
@@ -107,7 +107,7 @@ const Auth: React.FC = () => {
                 />
                {
                     !isLogin && (<input 
-                        className="form-control mb-2" 
+                        className="mb-2 form-control" 
                         name="password_confirmation" 
                         type="password" 
                         value={formData.password_confirmation}
@@ -115,7 +115,7 @@ const Auth: React.FC = () => {
                         placeholder="Confirm Password" 
                         required/>)
                }
-                <button className="btn btn-primary w-100" type="submit">{isLogin? "Login" : "Register"}</button>
+                <button className="btn btn-success w-100" type="submit">{isLogin? "Login" : "Register"}</button>
             </form>
 
             <p className="mt-3 text-center">{isLogin? "Don't have an account? " : "already have an account? " }
